@@ -1,0 +1,32 @@
+<h2>Hotel Table</h2>
+
+<div class="table-wrapper">
+    <table class="fl-table">
+        <thead>
+            <tr>
+                <th> HotelId </th>
+                <th> HotelName </th>
+                <th> HotelDescription </th>
+                <th> HotelPrice </th>
+                <th> HotelDiscount </th>
+                <th>HotelImage</th>
+                <th> HotelRank </th>
+                <th> HotelAddresses </th>
+            </tr>
+        </thead>
+   
+        <tbody  >
+            <tr *ngFor="let hotel of hotels" >
+                <td scope="row">{{hotel}}</td>
+                <td>{{hotel.HotelName}}</td>
+                <td>{{hotel.HotelDescription}}</td>
+                <td>{{hotel.HotelPrice}}</td>
+                <td>{{hotel.HotelDiscount}}</td>
+                <td>{{hotel.HotelImage}}</td>
+                <td>{{hotel.HotelRank}}</td>
+                <td>{{hotel.HotelAddresses}}</td>
+            </tr>  
+        </tbody>
+
+    </table>
+</div>
