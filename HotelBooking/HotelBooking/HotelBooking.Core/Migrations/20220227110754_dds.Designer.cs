@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HotelBooking.Core.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20220221080912_create")]
-    partial class create
+    [Migration("20220227110754_dds")]
+    partial class dds
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -36,7 +36,7 @@ namespace HotelBooking.Core.Migrations
 
                     b.Property<string>("HotelImage")
                         .IsRequired()
-                        .HasColumnType("varchar(50)");
+                        .HasColumnType("varchar(250)");
 
                     b.Property<string>("HotelName")
                         .IsRequired()
@@ -58,7 +58,7 @@ namespace HotelBooking.Core.Migrations
                             HotelId = 1,
                             HotelDescription = "Stay at Mövenpick Hotel Amman to benefit from a great location, excellent food and wonderful Jordanian hospitality.  ",
                             HotelDiscount = 3.0,
-                            HotelImage = "Image1",
+                            HotelImage = "https://cdn.audleytravel.com/700/-/79/154043075198089103191054060164068041221090238072.jpg",
                             HotelName = "movenpick",
                             HotelRank = 6.0,
                             Hotelprice = 35.0
@@ -68,7 +68,7 @@ namespace HotelBooking.Core.Migrations
                             HotelId = 2,
                             HotelDescription = "Stay at the Crowne Plaza Hotel Amman to take advantage of the great location, excellent food and wonderful Jordanian hospitality. ",
                             HotelDiscount = 9.0,
-                            HotelImage = "Image2",
+                            HotelImage = "https://pix10.agoda.net/hotelImages/293/293138/293138_14040916380019019069.jpg",
                             HotelName = "Crowne Plaza",
                             HotelRank = 7.0,
                             Hotelprice = 45.0
@@ -76,12 +76,42 @@ namespace HotelBooking.Core.Migrations
                         new
                         {
                             HotelId = 3,
-                            HotelDescription = "Tala Bay is planned to be fully self-sufficient from an infrastructure point of view, providing a diverse range of integrated services that span roads, electrical grids, ",
+                            HotelDescription = "Thousand Nights is planned to be fully self-sufficient from an infrastructure point of view, providing a diverse range of integrated services that span roads, electrical grids, ",
                             HotelDiscount = 11.0,
-                            HotelImage = "Image3",
-                            HotelName = "talabay",
+                            HotelImage = "https://imagesawe.s3.amazonaws.com/companies/images/2019/12/thousand_nights_hotel.jpg",
+                            HotelName = "Thousand Nights",
                             HotelRank = 7.0,
                             Hotelprice = 65.0
+                        },
+                        new
+                        {
+                            HotelId = 4,
+                            HotelDescription = "holiday inn is planned to be fully self-sufficient from an infrastructure point of view, providing a diverse range of integrated services that span roads, electrical grids, ",
+                            HotelDiscount = 12.0,
+                            HotelImage = "https://www.bridgetravel.com.jo/uploads/0000/15/2019/10/17/gallery-8-file-69.jpg",
+                            HotelName = "holiday inn",
+                            HotelRank = 7.0,
+                            Hotelprice = 77.0
+                        },
+                        new
+                        {
+                            HotelId = 5,
+                            HotelDescription = "An iconic landmark in bustling Amman, InterContinental Jordan Hotel offers cosmopolitan amenities with a Middle Eastern touch, from light-filled rooms, vibrant furnishings and sweeping architecture to international cuisines, Spa facilities, a selection of beautiful spaces suitable for different occasions, along with magnificent views. Located atop one of the seven hills of Amman, the hotel attracts international clientele from all over the world who enjoy its close proximity to the city center.",
+                            HotelDiscount = 14.0,
+                            HotelImage = "https://media.cntraveler.com/photos/5440499858544c134c067b02/16:9/w_2560,c_limit/intercontinental-amman-jordan-exterior-rca-2014.jpg",
+                            HotelName = "intercontinental",
+                            HotelRank = 4.0,
+                            Hotelprice = 67.0
+                        },
+                        new
+                        {
+                            HotelId = 6,
+                            HotelDescription = "A stay at Corp Amman Hotel places you in the heart of Amman, within a 5-minute drive of The Specialty Hospital and Al Abdali Mall. This 4.5-star hotel is 1.6 mi (2.5 km) from The Boulevard and 2.2 mi (3.6 km) from Amman Citadel. Make yourself at home in one of the 108 air-conditioned rooms featuring minibars and LCD televisions. Complimentary wireless Internet access keeps you connected, and cable programming is available for your entertainment.",
+                            HotelDiscount = 22.0,
+                            HotelImage = "https://media-cdn.tripadvisor.com/media/photo-s/10/8f/a3/4e/corp-amman-hotel.jpg",
+                            HotelName = "Corp",
+                            HotelRank = 6.0,
+                            Hotelprice = 79.0
                         });
                 });
 
@@ -135,6 +165,54 @@ namespace HotelBooking.Core.Migrations
                             HotelAddressId = 5,
                             HotelAddressCity = "Aqaba",
                             HotelId = 2
+                        },
+                        new
+                        {
+                            HotelAddressId = 6,
+                            HotelAddressCity = "Dead Sea",
+                            HotelId = 4
+                        },
+                        new
+                        {
+                            HotelAddressId = 7,
+                            HotelAddressCity = "Dead Sea",
+                            HotelId = 3
+                        },
+                        new
+                        {
+                            HotelAddressId = 8,
+                            HotelAddressCity = "Irbid",
+                            HotelId = 3
+                        },
+                        new
+                        {
+                            HotelAddressId = 9,
+                            HotelAddressCity = "Amman",
+                            HotelId = 5
+                        },
+                        new
+                        {
+                            HotelAddressId = 10,
+                            HotelAddressCity = "Aqaba",
+                            HotelId = 5
+                        },
+                        new
+                        {
+                            HotelAddressId = 11,
+                            HotelAddressCity = "Amman",
+                            HotelId = 6
+                        },
+                        new
+                        {
+                            HotelAddressId = 12,
+                            HotelAddressCity = "Irbid",
+                            HotelId = 6
+                        },
+                        new
+                        {
+                            HotelAddressId = 13,
+                            HotelAddressCity = "Dead Sea",
+                            HotelId = 6
                         });
                 });
 

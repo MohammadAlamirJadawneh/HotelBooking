@@ -1,11 +1,23 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  
-  <div class="Container"> 
+<div class="Container">
   <form class="example" action="action_page.php">
-    <input type="text" placeholder="Search.." name="search" [(ngModel)]="SearchByAddress">
-    <button  type="submit" (click)="goToCards()" style="cursor: pointer;"><i class="fa fa-search"></i></button>
+    <input type="text" placeholder="Search.." name="search" [(ngModel)]="SearchByAddress" required>
+    <button type="submit" [disabled]="!SearchByAddress.length" (click)="goToCards()" style="cursor: pointer;"><i
+        class="fa fa-search"></i></button>
   </form>
- {{SearchByAddress}}
+  {{SearchByAddress}}
 </div>
+<!-- 
+<div class="form">
+   <form class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Email</mat-label>
+      <input type="email" matInput [formControl]="searchFormControl" placeholder="Enter Location">
+
+      <mat-error *ngIf="searchFormControl.hasError('required')">
+        Search is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+  </form>
+</div> -->

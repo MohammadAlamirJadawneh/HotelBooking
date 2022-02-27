@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+
   }
 
   /* Style the search field */
@@ -10,6 +11,8 @@
     float: left;
     width: 80%;
     background: #f1f1f1;
+    margin-top: 180px;
+
   }
   
   /* Style the submit button */
@@ -23,6 +26,8 @@
     border: 1px solid grey;
     border-left: none; /* Prevent double borders */
     cursor: pointer;
+    margin-top: 180px;
+
   }
   
   form.example button:hover {
@@ -35,3 +40,7 @@
     clear: both;
     display: table;
   }
+
+
+
+  

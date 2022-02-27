@@ -3,6 +3,7 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
 }
+
 body{
     font-family: Helvetica;
     -webkit-font-smoothing: antialiased;
@@ -126,3 +127,43 @@ h2{
         text-align: center;
     }
 }
+
+table,
+th,
+td {
+  border: 2px solid black;
+}
+
+.container{
+    width: 98%;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+.card{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+ }
+  
+.example-icon {
+    padding: 0 14px;
+  }
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+.example-card {
+    max-width: 400px;
+    margin-top: 20px;
+  }
+  
+  .example-header-image {
+    background-image: url('../../../../assets/img/Booking.jpg');   
+    background-size: cover;
+  }
+  .ImageCard{
+    width: 400px;;
+    height: 400px;;
+}
+ 
