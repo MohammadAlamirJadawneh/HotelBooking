@@ -18,10 +18,8 @@ C:\Users\Mohammad\source\repos\HotelBooking\HotelBooking.Api\obj\Debug\netcoreap
 C:\Users\Mohammad\source\repos\HotelBooking\HotelBooking.Api\obj\Debug\netcoreapp3.1\HotelBooking.Api.dll
 C:\Users\Mohammad\source\repos\HotelBooking\HotelBooking.Api\obj\Debug\netcoreapp3.1\HotelBooking.Api.pdb
 C:\Users\Mohammad\source\repos\HotelBooking\HotelBooking.Api\obj\Debug\netcoreapp3.1\HotelBooking.Api.genruntimeconfig.cache
-C:\Users\Mohammad\source\repos\HotelBooking\HotelBooking.Api\bin\Debug\netcoreapp3.1\Humanizer.dll
 C:\Users\Mohammad\source\repos\HotelBooking\HotelBooking.Api\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
 C:\Users\Mohammad\source\repos\HotelBooking\HotelBooking.Api\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
-C:\Users\Mohammad\source\repos\HotelBooking\HotelBooking.Api\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\Mohammad\source\repos\HotelBooking\HotelBooking.Api\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\Mohammad\source\repos\HotelBooking\HotelBooking.Api\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
 C:\Users\Mohammad\source\repos\HotelBooking\HotelBooking.Api\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
@@ -76,3 +74,7 @@ C:\Users\Mohammad\source\repos\HotelBooking\HotelBooking.Api\bin\Debug\netcoreap
 C:\Users\Mohammad\source\repos\HotelBooking\HotelBooking.Api\bin\Debug\netcoreapp3.1\HotelBooking.Infra.dll
 C:\Users\Mohammad\source\repos\HotelBooking\HotelBooking.Api\bin\Debug\netcoreapp3.1\HotelBooking.Core.pdb
 C:\Users\Mohammad\source\repos\HotelBooking\HotelBooking.Api\bin\Debug\netcoreapp3.1\HotelBooking.Infra.pdb
+C:\Users\Mohammad\source\repos\HotelBooking\HotelBooking.Api\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.Design.dll
+C:\Users\Mohammad\source\repos\HotelBooking\HotelBooking.Api\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.Design.dll
+C:\Users\Mohammad\source\repos\HotelBooking\HotelBooking.Api\bin\Debug\netcoreapp3.1\Humanizer.dll
+C:\Users\Mohammad\source\repos\HotelBooking\HotelBooking.Api\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll

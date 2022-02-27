@@ -16,7 +16,7 @@ namespace HotelBooking.Core.Data
         public string HotelName { get; set; }
 
         [Required]
-        [Column(TypeName = "varchar(50)")]
+        [Column(TypeName = "varchar(250)")]
         public string HotelImage { get; set; }
 
         [Required]

@@ -9,41 +9,25 @@ import { SharedModule } from '../shared/shared.module';
   providedIn: 'root'
 })
 export class HotelService {
-  SearchByAddress:string ;
-  constructor(private http: HttpClient ,
-   ) {
- this.SearchByAddress ="";
 
+  SearchByAddress: string="";
+  constructor(private http: HttpClient
+  ) {
+ 
   }
 
   baseUrl = 'https://localhost:44338/api/Hotel/GetHotelByAddress/';
-  
+
   headers = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
     }),
     withCredentials: true,
   };
-   //hotels :Hotels|undefined;
- // GetHotelByAddress()   {
-     GetHotelByAddress(): Observable<Hotels[]> {
-    return  this.http.get<Hotels[]>(this.baseUrl +encodeURI('amman') ).pipe();
-  //  return this.http.get<Hotels[]>(this.baseUrl +  'amman'   ).pipe();
-  
 
+  GetHotelByAddress(search: string): Observable<Hotels[]> {
  
+    return this.http.get<Hotels[]>(this.baseUrl + search);
 
-  // encodeURI('Aqaba')
- 
- /*
-    const values = this.http.get<Hotels>(this.baseUrl +encodeURI('irbid') ).pipe();
-    values.subscribe(data=>{
-     
-    console.log('data'+data);
-     
-  })
-
-   return values;
-   */
   }
 }

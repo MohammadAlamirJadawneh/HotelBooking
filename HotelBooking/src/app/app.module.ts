@@ -8,7 +8,9 @@ import { NavigationBarComponent } from './navigation-bar/navigation-bar.componen
 import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SearchComponent } from './search/search.component';
-
+ 
+import { FormsModule } from '@angular/forms';
+ 
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,13 +24,13 @@ import { SearchComponent } from './search/search.component';
     AppRoutingModule,
     SharedModule,
      BrowserAnimationsModule,
-    // HttpClientModule
+     FormsModule
   ],exports: [
     BrowserModule,
     AppRoutingModule,
      SharedModule,
      BrowserAnimationsModule,
-     //HttpClientModule
+   FormsModule
   ],
   providers: [//SearchService,HotelService 
   ],

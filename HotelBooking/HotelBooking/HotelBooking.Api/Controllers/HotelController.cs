@@ -3,6 +3,7 @@ using HotelBooking.Core.DTO;
 using HotelBooking.Core.Service;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,9 +16,12 @@ namespace HotelBooking.Api.Controllers
     public class HotelController : ControllerBase
     {
         private readonly IHotelService iHotelService;
-        public HotelController(IHotelService iHotelService)
+        private readonly ILogger<HotelController> logger;
+
+        public HotelController(IHotelService iHotelService, ILogger<HotelController> logger)
         {
             this.iHotelService = iHotelService;
+            this.logger = logger;
         }
 
 
@@ -32,37 +36,118 @@ namespace HotelBooking.Api.Controllers
 
         [HttpGet]
         [Route("Get")]
-        public List<Hotel> GetAllHotel()
+        public ActionResult<IEnumerable< Hotel>> GetAllHotel()
         {
-            return iHotelService.GetAllHotel();
+            try
+            {
+                var hotels = iHotelService.GetAllHotel();
+                var hotelsService = hotels.Select(h => new Hotel
+                {
+                    HotelId = h.HotelId,
+                    HotelName = h.HotelName,
+                    HotelImage = h.HotelImage,
+                    Hotelprice = h.Hotelprice,
+                    HotelDiscount = h.HotelDiscount,
+                    HotelDescription = h.HotelDescription,
+                    HotelRank = h.HotelRank
+                });
+                return Ok(hotelsService);
+            }
+            catch(Exception ex)
+            {
+                logger.LogError($"Failed to get hotels: {ex} ");
+                return BadRequest("FAild to get Hotels");
+            }
         }
 
         [Route("{HotelId}")]
         [HttpDelete]
-        public string DeleteHotelByID(int HotelId)
+        public ActionResult  DeleteHotelByID(int HotelId)
         {
-            return iHotelService.DeleteHotelByID(HotelId);
+            try
+            {
+                var hotel = iHotelService.DeleteHotelByID(HotelId);
+                if (hotel != null)
+                    return Ok(hotel);
+                else
+                    return NotFound();
+            }
+            catch (Exception ex)
+            {
+                logger.LogError($"Failed To Delete This Hotel: {ex} ");
+                return BadRequest(ex.Message);
+            }
+            //return iHotelService.DeleteHotelByID(HotelId);
         }
 
         [Route("{HotelId}")]
         [HttpGet]
-        public Hotel GetHotelById(int HotelId)
+        public ActionResult GetHotelById(int HotelId)
         {
-            return iHotelService.GetHotelByID(HotelId);
+            try
+            {
+                var hotel = iHotelService.GetHotelByID(HotelId);
+                if (hotel != null)
+                    return Ok(hotel);
+                else
+                    return NotFound();
+            }
+            catch (Exception ex)
+            {
+                logger.LogError($"Failed to get hotels: {ex} ");
+                return BadRequest(ex.Message);
+            }
+
         }
 
         [HttpPut]
-        public string UpdateHotel([FromBody] Hotel hotel)
+        public ActionResult UpdateHotel([FromBody] Hotel hotel)
         {
-            return iHotelService.UpdateHotel(hotel);
+            try
+            {
+                 var hotels = iHotelService.UpdateHotel(hotel);
+
+                if (hotels != null)
+                    return Ok(hotels);
+                else
+                    return NotFound();
+            }
+            catch (Exception ex)
+            {
+                logger.LogError($"Failed to get hotels: {ex} ");
+                return BadRequest("FAild to get Hotels");
+            }
+
+
+              
         }
 
         [Route("GetHotelByAddress/{hotelAddress}")]
         [HttpGet]
 
-        public List<Hotel> GetHotelByAddress(string hotelAddress)
+        public ActionResult<IEnumerable<Hotel>> GetHotelByAddress(string hotelAddress)
         {
-            return iHotelService.GetHotelByAddress(hotelAddress);
-        }
+            try
+            {
+                var hotels = iHotelService.GetHotelByAddress(hotelAddress);
+                var hotelsService = hotels.Select(h => new Hotel
+                {
+                    HotelId = h.HotelId,
+                    HotelName = h.HotelName,
+                    HotelImage = h.HotelImage,
+                    Hotelprice = h.Hotelprice,
+                    HotelDiscount = h.HotelDiscount,
+                    HotelDescription = h.HotelDescription,
+                    HotelRank = h.HotelRank,
+                    HotelAddresses=h.HotelAddresses
+                });
+                return Ok(hotelsService);
+            }
+            catch (Exception ex)
+            {
+                logger.LogError($"Failed to get hotels: {ex} ");
+                return BadRequest("Faild to get Hotels");
+            }
+         }
     }
 }

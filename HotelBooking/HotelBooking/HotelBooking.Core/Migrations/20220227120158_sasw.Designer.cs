@@ -3,14 +3,16 @@ using HotelBooking.Core.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HotelBooking.Core.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20220227120158_sasw")]
+    partial class sasw
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -124,9 +126,9 @@ namespace HotelBooking.Core.Migrations
                         new
                         {
                             HotelId = 8,
-                            HotelDescription = "At the heart of the city, where modern and historic Amman meet, atop one of the city’s most prominent seven hills, Grand Hyatt Amman stands out with its distinctive carved pink stone façade, offering sweeping 360-degree views of the city. From welcoming guests and travelers into our expansive lobby, to not only capturing five-star comfort, but also an abundance of award-winning dining experiences, you will find all of this and more at Grand Hyatt Amman.",
+                            HotelDescription = "https://cf.bstatic.com/xdata/images/hotel/max1024x768/114318086.jpg",
                             HotelDiscount = 9.0,
-                            HotelImage = "https://assets.hyatt.com/content/dam/hyatt/hyattdam/images/2017/08/14/1619/Grand-Hyatt-Amman-P207-Exterior-Night.jpg/Grand-Hyatt-Amman-P207-Exterior-Night.16x9.jpg",
+                            HotelImage = " ",
                             HotelName = "Grand Hyatt Amman  ",
                             HotelRank = 7.0,
                             Hotelprice = 49.0
